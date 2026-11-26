@@ -110,9 +110,9 @@ public class PecaComum extends Peca {
             Peca alvo = tabuleiro.getPeca(posAlvo);
 
             // Verifica se a peça pode ser capturada.
-            if (!this.podeCapturar(alvo)) {
-                continue;
-            }
+    if (alvo == null || !this.podeCapturar  (alvo)) {
+     continue;
+    }
 
             // Registra o movimento de captura.
             Movimento saltoAtual = new Movimento(origem, posPouso);

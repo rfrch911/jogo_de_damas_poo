@@ -20,6 +20,7 @@ public class Partida {
         this.jogadorBrancas = new Jogador(nomeBrancas, Cor.BRANCA);
         this.jogadorPretas = new Jogador(nomePretas, Cor.PRETA);
         this.tabuleiro = new Tabuleiro();
+        this.tabuleiro.inicializarTabuleiro();
         this.status = StatusPartida.EM_ANDAMENTO;
         this.turno = Cor.BRANCA;
         this.pecaEmCapturaMultipla = null;

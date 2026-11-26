@@ -37,17 +37,18 @@ public class Tabuleiro {
 	}
 	
 	public int contarPecas(Cor corDoJogador) {
-		int total = 0;
-		for(int linha = 0; linha < 8; linha++) {
-			for(int coluna = 0; coluna < 8; coluna++) {
-				if(corDoJogador == casas[linha][coluna].getCor()) {
-					total++;
-				}
-			}
-		}
-		return total;
+  	  int total = 0;
+   	 for(int linha = 0; linha < 8; linha++) {
+      	  for(int coluna = 0; coluna < 8; coluna++) {
+            	if(casas[linha][coluna] != null &&
+                corDoJogador == casas[linha][coluna].getCor()) {
+                total++;
+           	 }
+       	 }
+   	 }
+  	  return total;
 	}
-	
+
 	public void removerPecasMarcadasComoCapturadas() {
 		for(int linha = 0; linha < 8; linha++) {
 			for(int coluna = 0; coluna < 8; coluna++) {
