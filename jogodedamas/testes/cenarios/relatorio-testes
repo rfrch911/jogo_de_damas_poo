@@ -1,0 +1,46 @@
+# Relatório de Testes Manuais — Jogo de Damas (POO)
+## Testes Obrigatórios (TM01 a TM23)
+| Teste | Descrição | Resultado Obtido | Situação |
+| :--- | :--- | :--- | :--- |
+| TM01 | Inicialização do tabuleiro (`NOVO` + `ESTADO`) | Tabuleiro 8x8 com 12 peças brancas e 12 pretas, turno BRANCAS, status
+EM_ANDAMENTO | APROVADO |
+| TM02 | Movimentação válida (`MOVER A3 B4`) | Peça movida de A3 para B4 e turno alterado para PRETAS | APROVADO |
+| TM03 | Movimento horizontal inválido (`MOVER A3 C3`) | Movimento rejeitado sem alterar tabuleiro ou turno | APROVADO |
+| TM04 | Movimento para posição ocupada (`MOVER A3 C1`) | Movimento rejeitado sem alterar tabuleiro ou turno | APROVADO |
+| TM05 | Movimentação de peça adversária (`MOVER B6 A5`) | Sistema informa que a peça pertence ao adversário | APROVADO |
+| TM06 | Coordenada inválida (`MOVER A3 Z9`) | Sistema informa coordenada inválida e continua executando | APROVADO |
+| TM07 | Alternância dos turnos | Movimentos alternados aceitos corretamente | APROVADO |
+| TM08 | Duas jogadas consecutivas do mesmo jogador | Segunda jogada rejeitada; turno mantido com adversário | APROVADO |
+| TM09 | Captura simples (`tm09_captura_simples.txt`) | Peça preta capturada, D4 limpa e turno atualizado | APROVADO |
+| TM10 | Captura obrigatória (`tm10_captura_obrigatoria.txt`) | Lance simples C3->B4 rejeitado com aviso de captura obrigatória |
+APROVADO |
+| TM11 | Captura múltipla (`tm11_captura_multipla.txt`) | Dois saltos executados pela mesma peça; peças removidas ao final | APROVADO |
+| TM12 | Captura para trás (`tm12_captura_para_tras.txt`) | Captura E5->C3 aceita e peça em D4 removida | APROVADO |
+| TM13 | Prioridade da maior captura (`tm13_maior_captura.txt`) | Captura de 1 peça rejeitada; sequência de 2 capturas aceita | APROVADO
+|
+| TM14 | Promoção a dama (`tm14_promocao.txt`) | Peça promovida ao alcançar B8 e exibida como `B` | APROVADO |
+| TM15 | Movimentação longa da dama (`tm15_dama_longa.txt`) | Dama deslocada de C3 para F6 | APROVADO |
+| TM16 | Movimentação da dama para trás (`tm16_dama_tras.txt`) | Dama deslocada de F6 para C3 | APROVADO |
+| TM17 | Dama bloqueada por peça própria (`tm17_dama_bloqueada.txt`) | Movimento C3->F6 rejeitado por peça própria em E5 | APROVADO |
+| TM18 | Vitória por eliminação (`tm18_vitoria_eliminacao.txt`) | Última peça capturada e status alterado para VITORIA_BRANCAS | APROVADO
+|
+| TM19 | Vitória por ausência de movimentos (`tm19_sem_movimentos.txt`) | Sistema identifica bloqueio e declara VITORIA_BRANCAS |
+APROVADO |
+| TM20 | Salvar uma partida (`SALVAR partida.txt`) | Arquivo gerado com tabuleiro, turno e nomes preservados | APROVADO |
+| TM21 | Carregar uma partida (`CARREGAR partida.txt`) | Estado restaurado integralmente em nova execução | APROVADO |
+| TM22 | Arquivo inexistente (`CARREGAR inexistente.txt`) | Mensagem de erro exibida sem encerrar aplicação | APROVADO |
+| TM23 | Arquivo inválido (`CARREGAR testes/cenarios/tm23_invalido.txt`) | Inconsistência detectada; estado anterior preservado |
+APROVADO |
+## Testes Adicionais de Robustez (TA01 a TA10)
+| Teste | Situação | Resultado Obtido | Situação |
+| :--- | :--- | :--- | :--- |
+| TA01 | Comando desconhecido | Mensagem de erro exibida sem encerrar | APROVADO |
+| TA02 | Comando MOVER sem coordenadas | Entrada rejeitada com instrução de uso | APROVADO |
+| TA03 | Coordenada de casa clara | Movimento rejeitado | APROVADO |
+| TA04 | Origem sem peça | Movimento rejeitado | APROVADO |
+| TA05 | Movimento para trás com peça comum sem captura | Movimento rejeitado | APROVADO |
+| TA06 | Movimento após encerramento da partida | Movimento rejeitado | APROVADO |
+| TA07 | Arquivo vazio | Carregamento rejeitado com erro | APROVADO |
+| TA08 | Comandos em letras minúsculas | Comandos reconhecidos normalmente | APROVADO |
+| TA09 | Tentativa de salvar durante captura múltipla | Salvamento rejeitado sem corromper estado | APROVADO |
+| TA10 | Nova partida após partida encerrada | Tabuleiro e turnos reinicializados | APROVADO |
