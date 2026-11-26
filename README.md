@@ -1,11 +1,11 @@
 # Jogo de Damas em Java (POO)
 ## 1. Integrantes do Grupo
-* Rafael (Arquitetura base, Tabuleiro e Interface de Terminal)
-* Integrante 1 (Movimentação e captura da Peça Comum)
-* Integrante 2 (Movimentação e captura da Dama)
-* Integrante 3 (Controle da Partida, Turnos e Vitória)
-* Integrante 4 (Persistência em Arquivos Locais)
-* Integrante 5 (Cenários de Teste, Relatório e Documentação)
+* Rafael Alves (Arquitetura base, Tabuleiro e Interface de Terminal)
+* Antoniel Rodrigues (Movimentação e captura da Peça Comum)
+* Isabelle Biasotto (Movimentação e captura da Dama)
+* Stefane Pereira (Controle da Partida, Turnos e Vitória)
+* Julia Trajano (Persistência em Arquivos Locais)
+* Sophia de Moura (Cenários de Teste, Relatório e Documentação)
 ## 2. Descrição do Sistema
 Implementação em Java do jogo de damas brasileiro em tabuleiro 8x8 operado exclusivamente via terminal (console), permitindo partidas
 entre dois jogadores humanos locais, validações de regras obrigatórias, promoção a dama, salvamento e carregamento de partidas em arquivo
