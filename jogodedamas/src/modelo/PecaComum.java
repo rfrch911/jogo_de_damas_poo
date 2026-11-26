@@ -127,7 +127,7 @@ public class PecaComum extends Peca {
 
             try {
 
-                tabuleiro.colocarPeca(this, posPouso);
+                tabuleiro.colocarPeca(posPouso, this);
 
                 // Busca recursivamente outras capturas possíveis.
                 continuacoes = getSequenciasCaptura(
@@ -138,7 +138,7 @@ public class PecaComum extends Peca {
 
                 // Restaura o tabuleiro após a simulação.
                 tabuleiro.removerPeca(posPouso);
-                tabuleiro.colocarPeca(this, origem);
+                tabuleiro.colocarPeca(origem, this);
 
                 // Libera a marcação temporária da peça capturada.
                 alvo.desmarcarCapturada();

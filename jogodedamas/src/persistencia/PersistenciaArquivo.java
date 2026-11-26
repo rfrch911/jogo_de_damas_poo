@@ -102,7 +102,7 @@ public class PersistenciaArquivo implements PersistenciaPartida {
 				if (peca != null && pos.isClara()) {
 					throw new PersistenciaException("Peça posicionada em casa clara inválida: " + pos);
 				}
-				tabuleiro.colocarPeca(peca, pos);
+				tabuleiro.colocarPeca(pos, peca);
 			}
 		}
 

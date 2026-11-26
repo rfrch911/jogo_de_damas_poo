@@ -20,7 +20,6 @@ public class Partida {
         this.jogadorBrancas = new Jogador(nomeBrancas, Cor.BRANCA);
         this.jogadorPretas = new Jogador(nomePretas, Cor.PRETA);
         this.tabuleiro = new Tabuleiro();
-        this.tabuleiro.inicializarPosicaoInicial();
         this.status = StatusPartida.EM_ANDAMENTO;
         this.turno = Cor.BRANCA;
         this.pecaEmCapturaMultipla = null;
@@ -92,7 +91,7 @@ public class Partida {
             if (alvo != null) {
                 alvo.marcarCapturada();
                 tabuleiro.removerPeca(origem);
-                tabuleiro.colocarPeca(peca, destino);
+                tabuleiro.colocarPeca(destino, peca);
 
                 if (!proximosPassos.isEmpty()) {
                     this.pecaEmCapturaMultipla = destino;
@@ -109,7 +108,7 @@ public class Partida {
             }
 
             tabuleiro.removerPeca(origem);
-            tabuleiro.colocarPeca(peca, destino);
+            tabuleiro.colocarPeca(destino, peca);
             finalizarJogada(destino);
         }
     }
@@ -118,7 +117,7 @@ public class Partida {
         tabuleiro.removerPecasMarcadasComoCapturadas();
         Peca pecaFinal = tabuleiro.getPeca(destinoFinal);
         if (pecaFinal != null && destinoFinal.getLinha() == pecaFinal.getCor().getLinhaPromocao()) {
-            tabuleiro.colocarPeca(pecaFinal.promoverPeca(), destinoFinal);
+            tabuleiro.colocarPeca(destinoFinal, pecaFinal.promoverPeca());
         }
         this.pecaEmCapturaMultipla = null;
         this.sequenciasEmAndamento = null;
